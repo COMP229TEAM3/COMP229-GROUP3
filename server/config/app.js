@@ -22,16 +22,17 @@ let DB = require('./db');
 
 // MONGODB Compass
 //point to your DB, URI
-mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
 let mongoDB = mongoose.connection;
-mongoDB.on('error', console.error.bind(console,'Error in Connection'));
-mongoDB.once('open', ()=> {
+mongoDB.on('error', console.error.bind(console, 'Error in Connection'));
+mongoDB.once('open', () => {
   console.log('Connected to MongoDB Atlas!!');
 });
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let productRouter = require('../routes/Byproduct');
+let surveyRouter = require('../routes/survey');
 
 let app = express();
 
@@ -50,9 +51,9 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //setup express session
 app.use(session({
-    secret: "SomeSecret",
-    saveUninitialized: false,
-    resave: false
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
 }));
 
 // initialize flash
@@ -78,22 +79,23 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/data',productRouter);
+app.use('/data', productRouter);
+app.use('/surveys', surveyRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error'});
+  res.render('error', { title: 'Error' });
 });
 
 

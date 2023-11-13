@@ -64,4 +64,4 @@ let Survey= mongoose.Schema
     }
 );
 
-module.exports.Survey = mongoose.model('Survey', Survey);
+module.exports = mongoose.model('Survey', Survey);
