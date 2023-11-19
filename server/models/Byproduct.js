@@ -21,19 +21,7 @@ let ProductModel = mongoose.Schema
             date:
             {
                 type: Date
-            },
-            created:
-            {
-                type: Date,
-                default: Date.now
-            },
-            updated:
-            {
-                type: Date,
-                default: Date.now
-
             }
-
         },
         {
             collection: "incident"
