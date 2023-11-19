@@ -45,7 +45,7 @@ module.exports.displayEditPage = async (req, res, next) => {
     try {
         const id = req.params.id;
         const userToEdit = await Byproduct.findById(id);
-        res.render('edit', { title: 'Edit User', user: userToEdit,
+        res.render('edit', { title: 'Edit Incident', user: userToEdit,
         displayName: req.user ? req.user.displayName : ''  });
     } catch (err) {
         console.error(err);
