@@ -148,3 +148,10 @@ module.exports.performLogout = (req, res, next) => {
         res.redirect('/');
     });
 }
+
+module.exports.displayAddPage = (req, res, next) => {
+    res.render('add', {
+        title: 'Add Incident Here',
+        displayName: req.user ? req.user.displayName : ''
+    });
+}

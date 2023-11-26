@@ -23,13 +23,6 @@ module.exports.displayProductList = async (req, res, next) => {
     }
 }
 
-module.exports.displayAddPage = (req, res, next) => {
-    res.render('add', {
-        title: 'Add Incident Here',
-        displayName: req.user ? req.user.displayName : ''
-    });
-}
-
 module.exports.performDelete = (req, res, next) => {
     const id = req.params.id;
 

@@ -3,6 +3,19 @@ let router = express.Router();
 
 let indexController = require('../controllers/index');
 
+// Helper function for guard purposes
+function requireAuth(req, res, next) {
+    // Check if the user is logged in
+    if (!req.isAuthenticated()) 
+    {
+        return res.redirect('/login');
+    } 
+    else 
+    {
+        next();
+    }
+}
+
 /* GET home page. */
 router.get('/', indexController.displayHomePage);
 
@@ -40,5 +53,8 @@ router.post('/register', indexController.processRegisterPage );
 
 /* GET to perform UserLogout - */
 router.get('/logout', indexController.performLogout );
+
+/* GET route for displaying ADD Page - CREATE OPERATION */
+router.get('/add', requireAuth, indexController.displayAddPage);
 
 module.exports = router;
