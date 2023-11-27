@@ -1,4 +1,7 @@
 # COMP229 - GROUP 3 Project - INCIDENT MANAGEMENT SURVEY 
+
+Group Information:
+
 Gian Paulo Desiderio – 301296686 – gdeside1@my.centennialcollege.ca
 Ugyen Thinley – 301133658 – uthinley@my.centennial college.ca
 Md Ripon Hossain – 301215985 –mhoss206@my.centennialcllege.ca
