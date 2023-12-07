@@ -3,6 +3,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     AboutComponent,
     FontAwesomeModule,
     RouterModule,
-    MainNavComponent
+    MainNavComponent,
+    BottomNavComponent
   ],
   template: `
   <main class="container">
@@ -23,7 +25,7 @@ import { RouterModule } from '@angular/router';
     <section class="content">
       <router-outlet></router-outlet>
     </section>
-  </main>
+    <app-bottom-nav><app-bottom-nav>
   `,
   styleUrls: ['./app.component.css'],
 })
