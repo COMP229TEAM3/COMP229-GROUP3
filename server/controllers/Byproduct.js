@@ -92,3 +92,13 @@ module.exports.processAddPage = (req, res, next) => {
             res.end(err);
         });
 }
+
+module.exports.getProductList = async (req, res, next) => {
+    try {
+        const ProductList = await Byproduct.find();
+        res.json(ProductList);
+    } catch (err) {
+        console.error(err);
+        next(err); // Pass the error to the error handling middleware
+    }
+}

@@ -20,7 +20,10 @@ function requireAuth(req, res, next) {
 }
 
 /* Get route for the Data List Page - READ OPERATION */
-router.get('/', productController.displayProductList);
+// router.get('/', productController.displayProductList);
+router.get('/', function(req, res, next) {
+    res.send('Express RESTful API');
+  });
 
 /* GET route for displaying ADD Page - CREATE OPERATION */
 router.get('/add', requireAuth, productController.displayAddPage);
@@ -36,5 +39,7 @@ router.post('/edit/:id', requireAuth,productController.processEditPage );
 
 /* GET to perform DELETION - DELETE OPERATION */
 router.get('/delete/:id', requireAuth, productController.performDelete );
+
+router.get('/all', productController.getProductList);
 
 module.exports = router;

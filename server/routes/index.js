@@ -4,13 +4,16 @@ let router = express.Router();
 let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', indexController.displayHomePage);
+// router.get('/', indexController.displayHomePage);
+router.get('/', function(req, res, next) {
+    res.send('Express RESTful API');
+  });
 
 /* GET home page. */
-router.get('/home', indexController.displayHomePage);
+// router.get('/home', indexController.displayHomePage);
 
-/* GET About Us page. */
-router.get('/about', indexController.displayAboutPage);
+// /* GET About Us page. */
+// router.get('/about', indexController.displayAboutPage);
 
 /* GET Products page. */
 router.get('/projects', indexController.displayProjectsPage);

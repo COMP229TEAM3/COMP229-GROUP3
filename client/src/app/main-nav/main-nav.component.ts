@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   template: `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
    <a class="navbar-brand" href="/">
@@ -15,16 +16,20 @@ import { CommonModule } from '@angular/common';
    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-         <a class="nav-link" href="/"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
+         <a class="nav-link" [routerLink]="['/']"><i class="fas fa-lg fa-laptop-house"></i> Home </a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About </a>
+         <a class="nav-link" [routerLink]="['/about']"><i class="fas fa-info-circle"></i> About </a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" href="/data"><i class="fa-regular fa-address-card"></i> Incident Survey List  </a>
+         <a class="nav-link" [routerLink]="['/incidents']">
+            <i class="fa-regular fa-address-card"></i>Incident Survey List
+         </a>
       </li>
-      <li class="nav-item"><a href="/login" class="nav-link">
-         <i class="fas fa-lg fa-sign-in-alt"></i> Login</a>
+      <li class="nav-item">
+      <a [routerLink]="['/login']" class="nav-link">
+         <i class="fas fa-lg fa-sign-in-alt"></i> Login
+         </a>
       </li>
 `,
   styleUrl: './main-nav.component.css'

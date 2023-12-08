@@ -7,7 +7,9 @@ let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
+var favicon = require('serve-favicon');
 let logger = require('morgan');
+var bodyParser = require('body-parser');
 
 // modules for authentication
 let session = require('express-session');
@@ -29,22 +31,25 @@ mongoDB.once('open', () => {
   console.log('Connected to MongoDB Atlas!!');
 });
 
-let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
+// let indexRouter = require('../routes/index');
+// let usersRouter = require('../routes/users');
 let productRouter = require('../routes/Byproduct');
 
 let app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, '../views'));
-app.set('view engine', 'ejs'); // express  -e
+// // view engine setup
+// app.set('views', path.join(__dirname, '../views'));
+// app.set('view engine', 'ejs'); // express  -e
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({'extended':'false'}));
+console.log(__dirname);
+app.use(express.static(path.join(__dirname, '../../client/dist/browser')));
 app.use(express.static(path.join(__dirname, '../../public')));
-
+app.use('/datadata', express.static(path.join(__dirname, '../../client/dist/browser')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 
@@ -56,7 +61,7 @@ app.use(session({
 }));
 
 // initialize flash
-app.use(flash());
+// app.use(flash());
 
 // initialize passport
 app.use(passport.initialize());
@@ -76,8 +81,8 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 app.use('/data', productRouter);
 
 // catch 404 and forward to error handler
