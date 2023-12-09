@@ -68,7 +68,7 @@ module.exports.processEditPage = (req, res, next) => {
 
     Byproduct.findByIdAndUpdate(id, updateUser)
         .then(() => {
-            res.redirect('/data');
+            res.redirect('/incident');
         })
         .catch((err) => {
             console.log(err);
@@ -85,7 +85,7 @@ module.exports.processAddPage = (req, res, next) => {
 
     newUser.save()
         .then((Byproduct) => {
-            res.redirect('/data');
+            res.redirect('/incident');
         })
         .catch((err) => {
             console.log(err);

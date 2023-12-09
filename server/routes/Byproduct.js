@@ -26,19 +26,19 @@ router.get('/', function(req, res, next) {
   });
 
 /* GET route for displaying ADD Page - CREATE OPERATION */
-router.get('/add', requireAuth, productController.displayAddPage);
+// router.get('/add', requireAuth, productController.displayAddPage);
 
 /* POST route for processing ADD Page - CREATE OPERATION */
-router.post('/add', requireAuth, productController.processAddPage );
+router.post('/add', productController.processAddPage );
 
 /* GET route for displaying EDIT Page - UPDATE OPERATION */
-router.get('/edit/:id', requireAuth,  productController.displayEditPage );
+// router.get('/edit/:id', requireAuth,  productController.displayEditPage );
 
 /* POST route for processing EDIT Page - UPDATE OPERATION */
-router.post('/edit/:id', requireAuth,productController.processEditPage );
+router.post('/edit/:id',productController.processEditPage );
 
 /* GET to perform DELETION - DELETE OPERATION */
-router.get('/delete/:id', requireAuth, productController.performDelete );
+router.get('/delete/:id', productController.performDelete );
 
 router.get('/all', productController.getProductList);
 
