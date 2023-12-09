@@ -5,6 +5,8 @@ import { AboutComponent } from './about/about.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { IncidentAddComponent } from './incident-add/incident-add.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     MainNavComponent,
     BottomNavComponent,
-    IncidentAddComponent
+    IncidentAddComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   template: `
   <main class="container">
