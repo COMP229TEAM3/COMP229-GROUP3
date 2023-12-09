@@ -7,7 +7,6 @@ let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
-var favicon = require('serve-favicon');
 let logger = require('morgan');
 var bodyParser = require('body-parser');
 
