@@ -3,12 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "ng": "ng",
-    "start": "ng build && node ./bin/www",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "node ./server.js"
   },
   "engines": {
     "node": "^18.17.1",
@@ -16,7 +11,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
@@ -31,8 +25,7 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0",
-    "popper.js": "^1.16.1",
-    "serve-favicon": "^2.5.0"
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "@types/connect-flash": "^0.0.39",
@@ -42,5 +35,9 @@
     "@types/passport": "^1.0.14",
     "@types/passport-local": "^1.0.37",
     "@types/passport-local-mongoose": "^6.1.3"
-  }
+  },
+  "description": "* Gian Paulo Desiderio – 301296686 – gdeside1@my.centennialcollege.ca\r * Ugyen Thinley – 301133658 – uthinley@my.centennialcollege.ca\r * Md Ripon Hossain – 301215985 – mhoss206@my.centennialcllege.ca\r * wsiu11 – 301272297 – wsiu11@my.centennialcellege.ca\r * Jaspreet kaur – 301361099 – jkau1054@my.centennialcollege.ca\r * Huy Lai - 301225382 - hlai35@my.centennialcollege.ca",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
 }

@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
          <a class="nav-link" [routerLink]="['/about']"><i class="fas fa-info-circle"></i> About </a>
       </li>
       <li class="nav-item">
-         <a class="nav-link" [routerLink]="['/incidents']">
+         <a class="nav-link" [routerLink]="['/incident']">
             <i class="fa-regular fa-address-card"></i>Incident Survey List
          </a>
       </li>
