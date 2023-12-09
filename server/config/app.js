@@ -46,9 +46,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 console.log(__dirname);
-app.use(express.static(path.join(__dirname, '../../client/dist/browser')));
+app.use(express.static(path.join(__dirname, '../../dist/browser')));
 app.use(express.static(path.join(__dirname, '../../public')));
-app.use('/incident', express.static(path.join(__dirname, '../../client/dist/browser')));
+app.use('/incident', express.static(path.join(__dirname, '../../dist/browser')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 
