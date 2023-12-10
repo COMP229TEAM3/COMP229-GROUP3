@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
 ```sh
-git clone [https://github.com/mars-attack/COMP229-Group-Project.git](https://github.com/COMP229TEAM3/COMP229-GROUP3)
+git clone https://github.com/COMP229TEAM3/COMP229-GROUP3.git
 ```
 2. Install NPM packages
 ```sh
